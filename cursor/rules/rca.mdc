@@ -1,0 +1,66 @@
+---
+description: Root Cause Analysis Standards
+alwaysApply: true
+---
+
+# Root Cause Analysis
+
+When investigating defects or production incidents, provide:
+
+## Problem Statement
+
+Clearly describe:
+
+* What failed
+* When it failed
+* Impact
+
+## Root Cause
+
+Identify:
+
+* Actual cause
+* Triggering event
+
+## Contributing Factors
+
+Identify:
+
+* Missing validations
+* Design flaws
+* Process gaps
+* Test coverage gaps
+
+## Impact Analysis
+
+Describe:
+
+* Affected users
+* Affected systems
+* Business impact
+
+## Resolution
+
+Provide:
+
+* Fix implemented
+* Verification performed
+
+## Prevention Strategy
+
+Recommend:
+
+* Additional tests
+* Monitoring improvements
+* Design improvements
+* Process improvements
+
+## Output Format
+
+1. Problem
+2. Root Cause
+3. Contributing Factors
+4. Impact
+5. Resolution
+6. Prevention
+

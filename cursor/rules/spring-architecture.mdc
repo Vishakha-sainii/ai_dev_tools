@@ -1,0 +1,257 @@
+---
+description: Enterprise Spring Boot Architecture and Development Standards
+alwaysApply: true
+source: https://cursor.directory/plugins/java
+---
+
+You are an expert in Java programming, Spring Boot, Spring Framework, Maven, JUnit, and related Java technologies.
+
+# Spring Boot Architecture Standards
+
+## Technology Stack
+
+- Use Java 17+ features where appropriate.
+- Prefer Spring Data JPA for persistence.
+- Use Flyway or Liquibase for database migrations.
+- Use Springdoc OpenAPI for API documentation.
+
+# Layered Architecture
+
+Follow strict layered architecture:
+
+Controller
+→ Service
+→ Repository
+→ Database
+
+Responsibilities:
+
+### Controller Layer
+
+- Handle HTTP requests and responses.
+- Perform request validation.
+- Map DTOs to domain models.
+- Return appropriate HTTP status codes.
+- Do not contain business logic.
+
+### Service Layer
+
+- Contain business logic.
+- Handle transactions when required.
+- Coordinate between repositories and external systems.
+- Keep methods cohesive and focused.
+
+### Repository Layer
+
+- Handle persistence concerns only.
+- Use Spring Data JPA repositories.
+- Do not contain business logic.
+
+# Naming Conventions
+
+## Classes
+
+Use PascalCase.
+
+Examples:
+
+- UserController
+- UserService
+- UserRepository
+- AuditLogService
+
+## Methods
+
+Use camelCase and action-oriented names.
+
+Examples:
+
+- createUser()
+- findUserById()
+- updateAuditRecord()
+- deleteFeatureFlag()
+
+## Variables
+
+Use camelCase and meaningful names.
+
+Examples:
+
+- userId
+- auditLogRequest
+- featureFlagStatus
+
+Avoid abbreviations unless universally accepted.
+
+## Constants
+
+Use UPPER_SNAKE_CASE.
+
+Examples:
+
+- DEFAULT_PAGE_SIZE
+- MAX_RETRY_ATTEMPTS
+- AUDIT_EVENT_TYPE
+
+## Packages
+
+Use lowercase package names.
+
+Examples:
+
+- com.company.audit.controller
+- com.company.audit.service
+- com.company.audit.repository
+
+# Dependency Injection
+
+- Use constructor injection only.
+- Do not use field injection.
+- Mark dependencies as final whenever possible.
+
+Example:
+
+@Service
+public class UserService {
+
+    private final UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+}
+
+# DTO Standards
+
+- Use DTOs for API contracts.
+- Do not expose entities directly through APIs.
+- Separate request and response DTOs.
+- Validate incoming requests using Bean Validation.
+
+Example:
+
+- CreateUserRequest
+- UpdateUserRequest
+- UserResponse
+
+# Validation
+
+- Use Bean Validation annotations.
+- Validate all external inputs.
+- Fail fast for invalid requests.
+
+Examples:
+
+- @NotNull
+- @NotBlank
+- @Email
+- @Size
+
+Use @Valid in controller methods.
+
+
+# Exception Handling
+
+Use centralized exception handling.
+
+Requirements:
+
+- Use @RestControllerAdvice.
+- Use custom exceptions for business errors.
+- Return consistent error responses.
+
+Avoid try-catch blocks in controllers unless required.
+
+# Logging Standards
+
+Use SLF4J with Logback.
+
+Log Levels:
+
+- ERROR → System failures
+- WARN → Recoverable issues
+- INFO → Business events
+- DEBUG → Diagnostic information
+
+Never log:
+
+- Passwords
+- Tokens
+- Secrets
+- Sensitive personal information
+
+Use parameterized logging.
+
+Good:
+
+log.info("User {} created successfully", userId);
+
+Bad:
+
+log.info("User created successfully " + userId);
+
+# REST API Standards
+
+Follow RESTful design principles.
+
+Use appropriate HTTP methods:
+
+- GET → Read
+- POST → Create
+- PUT → Update
+- PATCH → Partial Update
+- DELETE → Delete
+
+Use proper status codes:
+
+- 200 OK
+- 201 Created
+- 204 No Content
+- 400 Bad Request
+- 401 Unauthorized
+- 403 Forbidden
+- 404 Not Found
+- 409 Conflict
+- 500 Internal Server Error
+
+# Security Standards
+
+- Validate all inputs.
+- Follow OWASP recommendations.
+- Use BCrypt for password encoding.
+- Apply principle of least privilege.
+- Never hardcode credentials.
+- Use externalized configuration.
+
+
+# Database Standards
+
+- Use indexed columns for frequent lookups.
+- Avoid N+1 query issues.
+- Define explicit entity relationships.
+- Use pagination for large result sets.
+- Prefer lazy loading unless eager loading is required.
+
+# Configuration Standards
+
+- Use application.yml.
+- Use Spring Profiles for environment-specific configuration.
+- Use @ConfigurationProperties for strongly typed configuration.
+
+Avoid hardcoded values.
+
+
+# Code Quality
+
+Follow SOLID principles.
+
+Requirements:
+
+- High cohesion
+- Low coupling
+- Single Responsibility Principle
+- Clear separation of concerns
+- Avoid duplicated code
+- Prefer readability over clever implementations
+
+Prioritize maintainability, testability, and extensibility.

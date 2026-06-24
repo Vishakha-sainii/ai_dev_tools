@@ -1,0 +1,85 @@
+---
+description: AI Assisted Development Workflow
+alwaysApply: true
+---
+
+# AI Development Workflow
+
+Follow this workflow before generating large code changes.
+
+## Step 1 - Plan
+
+Analyze:
+
+* Existing architecture
+* Existing patterns
+* Impacted modules
+* Dependencies
+* Risks
+
+Do not generate code yet.
+
+Produce:
+
+* Design proposal
+* Task breakdown
+* Assumptions
+
+## Step 2 - Ask
+
+Validate:
+
+* Design decisions
+* Security considerations
+* Edge cases
+* Performance implications
+
+Identify alternatives when applicable.
+
+## Step 3 - Agent
+
+Implement incrementally.
+
+Generate:
+
+* Small reviewable changes
+* Tests alongside implementation
+
+Avoid large multi-module changes in a single step.
+
+## Step 4 - Review
+
+Review implementation for:
+
+* Security
+* Performance
+* Maintainability
+* Test coverage
+
+## Step 5 - Refactor
+
+Improve:
+
+* Readability
+* Reusability
+* Extensibility
+
+Preserve behavior.
+
+## Step 6 - Documentation
+
+Generate:
+
+* Design documentation
+* API documentation
+* Testing strategy
+* Assumptions
+
+## Step 7 - RCA
+
+For defects:
+
+* Identify root cause
+* Explain impact
+* Recommend prevention measures
+

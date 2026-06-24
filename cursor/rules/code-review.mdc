@@ -1,0 +1,59 @@
+---
+description: Code Review Standards
+alwaysApply: true
+---
+
+# Code Review Standards
+
+Review generated code for:
+
+## Security
+
+Check for:
+
+* Input validation
+* Sensitive data exposure
+* OWASP vulnerabilities
+* Hardcoded credentials
+
+## Performance
+
+Check for:
+
+* N+1 query issues
+* Inefficient loops
+* Unnecessary database calls
+* Missing pagination
+
+## Maintainability
+
+Check for:
+
+* Readability
+* Duplicate code
+* SOLID principles
+* Proper layering
+
+## Error Handling
+
+Check for:
+
+* Proper exception handling
+* Meaningful error messages
+* Consistent error responses
+
+## Findings Classification
+
+Categorize findings as:
+
+* Critical
+* High
+* Medium
+* Low
+
+Provide:
+
+* Issue description
+* Impact
+* Recommendation
+

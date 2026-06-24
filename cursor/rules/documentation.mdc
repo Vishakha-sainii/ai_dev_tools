@@ -1,0 +1,65 @@
+---
+description: Documentation Standards
+alwaysApply: true
+---
+
+# Documentation Standards
+
+Every feature should include:
+
+## Design Overview
+
+Document:
+- Problem Statement
+- Proposed Solution
+- Architecture Overview
+- Key Design Decisions
+
+## API Documentation
+
+Document:
+- Endpoints
+- Request Models
+- Response Models
+- Error Responses
+- Example Requests and Responses
+
+## Assumptions
+
+Clearly document:
+- Functional assumptions
+- Technical assumptions
+- Environmental assumptions
+
+## Limitations
+
+Document:
+- Known constraints
+- Unsupported scenarios
+- Technical limitations
+
+## Testing Strategy
+
+Document:
+- Unit testing approach
+- Integration testing approach
+- Edge cases covered
+- Test coverage expectations
+
+## Architecture Decisions
+
+When introducing new frameworks, patterns, or libraries:
+
+Document:
+- Why the decision was made
+- Alternatives considered
+- Trade-offs
+- Impact on the system
+
+## Documentation Quality
+
+Documentation should be:
+- Clear
+- Concise
+- Version-controlled
+- Updated alongside code changes

@@ -1,0 +1,68 @@
+---
+description: Testing Standards
+alwaysApply: true
+---
+
+# Testing Standards
+
+Generate tests for all new business logic.
+
+## Unit Testing
+
+Use:
+
+* JUnit 5
+* Mockito
+
+Cover:
+
+* Happy Path
+* Validation Failures
+* Exception Scenarios
+* Edge Cases
+
+## Repository Testing
+
+Use:
+
+* @DataJpaTest
+
+Validate:
+
+* CRUD operations
+* Custom queries
+* Entity relationships
+
+## Controller Testing
+
+Use:
+
+* MockMvc
+
+Validate:
+
+* Request validation
+* Response payloads
+* HTTP status codes
+* Error responses
+
+## Integration Testing
+
+Use:
+
+* @SpringBootTest
+
+Validate:
+
+* End-to-end workflows
+* Service interactions
+* Persistence behavior
+
+## General Rules
+
+* Tests should be deterministic.
+* Avoid unnecessary mocking.
+* Keep test methods focused on one behavior.
+* Use descriptive test names.
+* Follow Arrange → Act → Assert pattern.
+
