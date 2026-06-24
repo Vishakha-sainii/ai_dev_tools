@@ -3,6 +3,8 @@ This repository contains reusable Cursor rules and commands for Java Spring Boot
 The goal is to provide a consistent AI-assisted development workflow that helps teams design, implement, review, test, and document applications more effectively.
 
 What this repo is for: 
+
+
 Standardize AI-assisted Spring Boot development
 
 Improve consistency across projects
@@ -16,7 +18,8 @@ Generate better code, tests, documentation, and reviews
 
 What it contains : 
 
-Rules
+
+Rules :
 Located in .cursor/rules/
 
 ai-development-workflow.mdc - Structured Plan → Ask → Agent → Review → Refactor → Documentation → RCA workflow
@@ -47,7 +50,10 @@ write-unit-test.md
 
 These commands can be executed directly from Cursor to automate common development tasks.
 
+
+
 How to use: 
+
 Option 1 - Import from GitHub (Recommended)
 Open Cursor.
 Navigate to Settings → Rules.
@@ -62,7 +68,10 @@ Clone or download this repository.
 Copy the .cursor directory into the root of your Spring Boot project.
 
 
+
+
 Recommended For:
+
 Java Developers
 
 Spring Boot Developers
